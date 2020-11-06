@@ -4,7 +4,10 @@
   "main": "server.js",
   "license": "MIT",
   "scripts": {
+    "build": "yarn build-front && yarn build-ts",
     "build-ts": "tsc",
+    "build-front": "parcel build ./src/front/index.html",
+    "dev": "parcel ./src/front/index.html",
     "test": "jest",
     "serve": "node dist/server.js",
     "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"yellow.bold,green.bold\" \"yarn run watch-ts\" \"yarn run nodemon\"",
@@ -26,6 +29,7 @@
     "concurrently": "^5.3.0",
     "jest": "^26.6.3",
     "nodemon": "^2.0.6",
+    "parcel-bundler": "^1.12.4",
     "ts-jest": "^26.4.3",
     "ts-node": "^9.0.0"
   },

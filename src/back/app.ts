@@ -1,7 +1,7 @@
 import express from "express";
 import path from "path";
-import { ApolloServer, gql } from 'apollo-server-express';
-import { typeDefs } from "./back/schema/typeDefs";
+import { ApolloServer } from 'apollo-server-express';
+import { typeDefs } from "./schema/typeDefs";
 
 const books = [
   {
@@ -43,7 +43,8 @@ app.use(
 );
 
 app.get('/', (req, res) => {
-    // res.sendFile('./dist/index.html')
+  console.log(path.join(__dirname, "../dist"))
+    res.sendFile(path.join(__dirname, "../../dist/index.html"))
   })
 
 export { app };
