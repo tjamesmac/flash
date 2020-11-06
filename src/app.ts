@@ -1,13 +1,42 @@
 import express from "express";
 import path from "path";
-import { send } from "process";
+import { ApolloServer, gql } from 'apollo-server-express';
+import { typeDefs } from "./back/schema/typeDefs";
 
+const books = [
+  {
+    title: "The Way of Kings",
+    author: "Brandon Sanderson"
+  },
+  {
+    title: "Words Of Radiance",
+    author: "Brandon Sanderson"
+  }
+]
 
-// Create Express server
+const resolvers = {
+  Query: {
+    books: () => books,
+    book: (parent: any, args: any) => books.find(book => book.title === args.title),
+  },
+  Mutation: {
+    addBook: (_: any, {input}: any) => {
+      const { title, author } = input;
+      const book = { title, author };
+      books.push(book)
+      return books;
+    }
+  }
+}
+
 const app = express();
-// Express configuration
-// app.set("port", process.env.PORT || 3005);
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+  playground: true
+})
 
+server.applyMiddleware({ app, path: "/graphql" })
 
 app.use(
     express.static(path.join(__dirname, "../dist"), { maxAge: 31557600000 })

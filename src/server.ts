@@ -7,7 +7,7 @@ const server = app.listen(3005, () => {
         3005,
         app.get("env")
     );
-    console.log("  Press CTRL-C to stop\n");
+    console.log("  Press CTRL-C to stop");
 })
 
 export { server };
