@@ -9,11 +9,11 @@
     "build-front": "parcel build ./src/front/index.html",
     "dev": "parcel ./src/front/index.html",
     "test": "jest",
-    "serve": "node dist/server.js",
+    "serve": "node dist/back/server.js",
     "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"yellow.bold,green.bold\" \"yarn run watch-ts\" \"yarn run nodemon\"",
     "watch-node": "nodemon",
     "watch-ts": "tsc -w",
-    "docker-build": "yarn build-ts"
+    "docker-build": "yarn build && yarn serve"
   },
   "dependencies": {
     "apollo-server-express": "^2.19.0",

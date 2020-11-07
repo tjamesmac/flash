@@ -1,16 +1,16 @@
-FROM node:current-slim
+# Using this version because some of my deps can't handle -v 15 yet
+FROM node:13-alpine
 
+# working directoy of the app
 WORKDIR /usr/src/app
-
+# copies package json to ^
 COPY package.json .
-COPY tsconfig.json .
-COPY nodemon.json .
-
+# removed node_modules from .dockerignore to speed this part up
 RUN yarn install
-
+# port that i want to work off of
 EXPOSE 3005
+# copy only the code files
+COPY src /usr/src/app/src
 
-COPY . .
 
-
-CMD [ "yarn", "build"]
+CMD [ "yarn", "docker-build"]
