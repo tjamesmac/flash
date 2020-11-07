@@ -13,4 +13,4 @@ EXPOSE 3005
 COPY . .
 
 
-CMD [ "yarn", "watch-node"]
+CMD [ "yarn", "build"]

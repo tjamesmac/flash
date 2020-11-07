@@ -6,18 +6,50 @@ What I want to include in this
 
 - No react
 - All typescript
-- Make use of github graphql stuff
 - Tested
 - CI/CD (docker, github actions etc)
-- Deploy to AWS
 - Help with system design
 - Include a flash card function
+- Deploy to Azure because the cosmo nosql is free && app engine equivalent is free
 
-## Tasks
+TODO:
+- Read about Deploying to Azure.
+- This means finding out how to integrate github repo so I dont have to stick my code in there
 
-What I am going to do next in this order:
 
-- Set up graphql
-- make a query on the front-end
-- build the means to output that data
-- look to see if I can cache the data
+Tasks:
+Go a step further
+Make a library - a tutorial library
+Want to see if I can make a book.
+
+(By this I mean output my the content I want in a similar format to a book)
+
+Cover
+Contents
+Rest are chapters
+
+Give the option to go to next page
+
+So I have a shelf
+|---------------|   |---------------| 
+|               |   |               |
+|  Algorithms   |   |   Databases   |
+|               |   |               |
+|---------------|   |---------------|
+
+There are two books on the shelf
+
+Book {
+    genre
+    title
+    author
+    created
+    lastupdated
+    last reviewed
+}
+
+Shelf {
+    books
+    last updated
+    some others things
+}
