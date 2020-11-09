@@ -39,7 +39,7 @@ const server = new ApolloServer({
 server.applyMiddleware({ app, path: "/graphql" })
 
 app.use(
-    express.static(path.join(__dirname, "../dist"), { maxAge: 31557600000 })
+    express.static(path.join(__dirname, "../../dist"), { maxAge: 31557600000 })
 );
 
 app.get('/', (req, res) => {

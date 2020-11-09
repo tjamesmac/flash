@@ -1,9 +1,8 @@
-
-async function ready() {
+function ready() {
     console.log("hello world i am in a function");
-    const data = fetch('https://old.reddit.com/r/all.json')
-    const results = await (await data).json()
-    console.log(results, data);
+
 }
 
+const root = document.querySelector("#root");
+console.log(root);
 ready();
