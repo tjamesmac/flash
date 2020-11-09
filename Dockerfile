@@ -1,7 +1,7 @@
 # Using this version because some of my deps can't handle -v 15 yet
 FROM node:13-alpine
 
-ENV port=3006
+ENV port=80
 
 # working directoy of the app
 WORKDIR /usr/src/app
