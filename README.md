@@ -10,12 +10,16 @@ What I want to include in this
 - CI/CD (docker, github actions etc)
 - Help with system design
 - Include a flash card function
-- Deploy to Azure because the cosmo nosql is free && app engine equivalent is free
+- Deploy to Azure because app engine equivalent is free
+- Database of mongodb atlas not cosmo - cosmo needs a windows environment to use locally
 
 TODO:
+
 - Read about Deploying to Azure.
 - This means finding out how to integrate github repo so I dont have to stick my code in there
-
+- Make a multistage docker file so I can separate my dev and prod environments
+- The dev environment needs to spin up a local copy of MongoDB
+- The prod envionrment needs to connect to the cloud atlas db
 
 Tasks:
 Go a step further
@@ -31,25 +35,25 @@ Rest are chapters
 Give the option to go to next page
 
 So I have a shelf
-|---------------|   |---------------| 
-|               |   |               |
-|  Algorithms   |   |   Databases   |
-|               |   |               |
-|---------------|   |---------------|
+|---------------| |---------------|
+| | | |
+| Algorithms | | Databases |
+| | | |
+|---------------| |---------------|
 
 There are two books on the shelf
 
 Book {
-    genre
-    title
-    author
-    created
-    lastupdated
-    last reviewed
+genre
+title
+author
+created
+lastupdated
+last reviewed
 }
 
 Shelf {
-    books
-    last updated
-    some others things
+books
+last updated
+some others things
 }
