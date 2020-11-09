@@ -33,10 +33,14 @@ const app = express();
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-  playground: true
+  playground: true,
+  
 })
 
-server.applyMiddleware({ app, path: "/graphql" })
+server.applyMiddleware({ app, path: "/graphql", cors: {
+  origin: "http://localhost:1234",
+  credentials: true
+} })
 
 app.use(
     express.static(path.join(__dirname, "../../dist"), { maxAge: 31557600000 })
