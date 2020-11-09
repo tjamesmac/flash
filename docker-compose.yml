@@ -3,6 +3,6 @@ services:
   web:
     build: .
     ports:
-      - ${port}:${port}
+      - ${PORT}:${PORT}
     volumes:
       - .:/usr/src/app
